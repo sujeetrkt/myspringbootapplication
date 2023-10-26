@@ -4,7 +4,7 @@ pipeline{
     agent any
     
     tools{
-        maven 'Maven'
+        maven 'MAVEN'
     }
       environment {
         NEXUS_VERSION = "nexus3"
@@ -38,16 +38,16 @@ pipeline{
                             nexusVersion: NEXUS_VERSION,
                             protocol: NEXUS_PROTOCOL,
                             nexusUrl: NEXUS_URL,
-                            groupId: pom.com.in28minutes.rest.webservices,
-                            version: pom.2.1.7.RELEASE,
+                            groupId: 'pom.com.in28minutes.rest.webservices',
+                            version: 'pom.2.1.7-RELEASE',
                             repository: NEXUS_REPOSITORY,
                             credentialsId: NEXUS_CREDENTIAL_ID,
                             artifacts: [
-                                [artifactId: pom.01-hello-world-rest-api,
+                                [artifactId: 'pom.01-hello-world-rest-api',
                                 classifier: '',
                                 file: artifactPath,
                                 type: pom.packaging],
-                                [artifactId: pom.01-hello-world-rest-api,
+                                [artifactId: 'pom.01-hello-world-rest-api',
                                 classifier: '',
                                 file: "pom.xml",
                                 type: "pom"]
