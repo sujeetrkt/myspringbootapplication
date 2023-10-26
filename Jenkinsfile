@@ -62,7 +62,7 @@ pipeline{
          stage('Build Node JS Docker Image') {
             steps {
                 script {
-                  sh 'docker build -t devopshint/node-app-1.0 .'
+                  bat 'docker build -t sujeetrkt/hello-world-rest-api .'
                 }
             }
         }
