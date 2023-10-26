@@ -69,7 +69,7 @@ pipeline{
                 script {
 
                     withCredentials([string(credentialsId: 'DOCKER_HUB_PWD', variable: 'dockerhubpwd')]) {
- bat 'docker login -u sujeetrkt -p ${dockerhubpwd}'
+ bat 'docker login -u sujeetrkt -p Credit@123'
   bat 'docker push sujeetrkt/hello-world-rest-api'
 }
            
