@@ -59,5 +59,12 @@ pipeline{
             }
         }
         }
+         stage('Build Node JS Docker Image') {
+            steps {
+                script {
+                  sh 'docker build -t devopshint/node-app-1.0 .'
+                }
+            }
+        }
     }
 }
