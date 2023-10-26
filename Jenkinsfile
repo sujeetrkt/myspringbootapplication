@@ -1,5 +1,3 @@
-
-
 pipeline{
     agent any
     
@@ -59,12 +57,24 @@ pipeline{
             }
         }
         }
-         stage('Build Node JS Docker Image') {
+         stage('Build maven Docker Image') {
             steps {
                 script {
                   bat 'docker build -t sujeetrkt/hello-world-rest-api .'
                 }
             }
+        }
+         stage('Deploy Docker Image to DockerHub') {
+            steps {
+                script {
+
+                    withCredentials([string(credentialsId: 'DOCKER_HUB_PWD', variable: 'dockerhubpwd')]) {
+ bat 'docker login -u sujeetcog@gmail.com -p ${dockerhubpwd}'
+  bat 'docker push sujeetrkt/hello-world-rest-api'
+}
+           
+        }
+            }   
         }
     }
 }
