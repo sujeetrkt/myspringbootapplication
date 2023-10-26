@@ -7,7 +7,7 @@ tools{
         stage('Build Maven Project '){
             steps{
              checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/sujeetrkt/myspringbootapplication.git']])
-               sh "mvn clean package" 
+               bat "mvn clean install" 
             }
 
         }
